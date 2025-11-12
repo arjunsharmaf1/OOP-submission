@@ -1,31 +1,38 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exp 10 Cpp", "Exp 10 Cpp.vcxproj", "{64F57F6A-0623-4060-85E0-CA4747CB9528}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{64F57F6A-0623-4060-85E0-CA4747CB9528}.Debug|x64.ActiveCfg = Debug|x64
-		{64F57F6A-0623-4060-85E0-CA4747CB9528}.Debug|x64.Build.0 = Debug|x64
-		{64F57F6A-0623-4060-85E0-CA4747CB9528}.Debug|x86.ActiveCfg = Debug|Win32
-		{64F57F6A-0623-4060-85E0-CA4747CB9528}.Debug|x86.Build.0 = Debug|Win32
-		{64F57F6A-0623-4060-85E0-CA4747CB9528}.Release|x64.ActiveCfg = Release|x64
-		{64F57F6A-0623-4060-85E0-CA4747CB9528}.Release|x64.Build.0 = Release|x64
-		{64F57F6A-0623-4060-85E0-CA4747CB9528}.Release|x86.ActiveCfg = Release|Win32
-		{64F57F6A-0623-4060-85E0-CA4747CB9528}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CE115034-106B-419F-A28A-C2B98242E3EE}
-	EndGlobalSection
-EndGlobal
+/*
+#include <iostream>
+using namespace std;
+template <typename T>
+class sum {
+public :
+	T add(T a, T b, T c, T d, T e, T f, T g, T h, T i, T j) {
+		return a + b + c + d + e + f + g + h + i + j;
+	}
+};
+int main() {
+	sum<int> i;
+	cout << i.add(5, 10, 15, 20, 25, 30, 35, 40, 45, 50)<<"\n";
+	sum<float> f;
+	cout << f.add(5.1, 10.2, 15.3, 20.4, 25.5, 30.6, 35.7, 40.8, 45.9, 50.0)<<"\n";
+	sum<double> d;
+	cout << d.add(5.19, 10.28, 15.37, 20.46, 25.55, 30.46, 35.37, 40.38, 45.29, 50.01)<<"\n";
+	return 0;
+}
+*/
+
+#include<iostream>
+#include<string>
+using namespace std;
+template <typename T>
+	T square(T x) {
+		return x * x;
+	}
+	template <>
+		string square<string>(string s) {
+			return s + s;
+		}
+	int main() {
+		cout << "Square of 5 = " << square(5) << endl;
+		cout << "Square of 3.5 = " << square(3.5) << endl;
+		cout << "Square of string 'Hi' = " << square(string("Hi")) << endl;
+		return 0;
+}
