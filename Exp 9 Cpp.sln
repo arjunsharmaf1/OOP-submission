@@ -1,31 +1,129 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exp 9 Cpp", "Exp 9 Cpp.vcxproj", "{2D3E5EF0-712B-4078-ABEF-4BDA9AA25C72}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2D3E5EF0-712B-4078-ABEF-4BDA9AA25C72}.Debug|x64.ActiveCfg = Debug|x64
-		{2D3E5EF0-712B-4078-ABEF-4BDA9AA25C72}.Debug|x64.Build.0 = Debug|x64
-		{2D3E5EF0-712B-4078-ABEF-4BDA9AA25C72}.Debug|x86.ActiveCfg = Debug|Win32
-		{2D3E5EF0-712B-4078-ABEF-4BDA9AA25C72}.Debug|x86.Build.0 = Debug|Win32
-		{2D3E5EF0-712B-4078-ABEF-4BDA9AA25C72}.Release|x64.ActiveCfg = Release|x64
-		{2D3E5EF0-712B-4078-ABEF-4BDA9AA25C72}.Release|x64.Build.0 = Release|x64
-		{2D3E5EF0-712B-4078-ABEF-4BDA9AA25C72}.Release|x86.ActiveCfg = Release|Win32
-		{2D3E5EF0-712B-4078-ABEF-4BDA9AA25C72}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {92977DEE-9BF8-497C-B853-FFB7786DCCA8}
-	EndGlobalSection
-EndGlobal
+/*
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    fstream first_file, second_file;
+    first_file.open("first.txt", ios::in);
+    if (!first_file) {
+        cout << "Error opening first.txt!";
+        return 1;
+    }
+
+    second_file.open("second.txt", ios::out);
+    if (!second_file) {
+        cout << "Error opening second.txt!";
+        return 1;
+    }
+
+    char ch;
+    while (first_file.get(ch)) {
+        second_file.put(ch);
+    }
+
+    first_file.close();
+    second_file.close();
+
+    cout << "File copied successfully!";
+    return 0;
+}
+*/
+/*
+#include <iostream>
+#include <fstream>
+#include <ctype.h>
+using namespace std;
+
+int main()
+{
+    fstream new_file;
+    new_file.open("first.txt", ios::in);
+    if (!new_file) {
+        cout << "Error opening first file!";
+        return 1;
+    }
+
+    int dig_c = 0;
+    int spc_c = 0;
+    char ch;
+
+    while (new_file.get(ch)) {
+        if (isdigit(ch)) {
+            dig_c++;
+        }
+        else if (isspace(ch)) {
+            spc_c++;
+        }
+    }
+
+    new_file.close();
+    cout << "No. of digits: " << dig_c << endl << "No. of spaces: " << spc_c << endl;
+    return 0;
+}
+*/
+/*
+#include <iostream>
+#include <fstream>
+#include <ctype.h>
+using namespace std;
+
+int main()
+{
+    fstream new_file;
+    new_file.open("first.txt", ios::in);
+    if (!new_file) {
+        cout << "Error occured!" << endl;
+        return 1;
+    }
+
+    char ch;
+    int word_c = 0;
+    bool inword = false;
+
+    while (new_file.get(ch)) {
+        if (isspace(ch)) {
+            inword = false;
+        }
+        else if (!inword) {
+            word_c++;
+            inword = true;
+        }
+    }
+
+    new_file.close();
+    cout << "No. of words: " << word_c << endl;
+    return 0;
+}
+*/
+/*
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    fstream new_file;
+    new_file.open("first.txt", ios::in);
+    if (!new_file) {
+        cout << "Error in opening first.txt!";
+        return 1;
+    }
+
+    string target = "Arjun";
+    string word;
+    int count = 0;
+
+    while (new_file >> word) {
+        if (word == target) {
+            count++;
+        }
+    }
+
+    new_file.close();
+    cout << "The word: " << target << " occured " << count << " times" << endl;
+    return 0;
+}
+*/
