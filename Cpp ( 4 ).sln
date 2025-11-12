@@ -1,31 +1,129 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cpp ( 4 )", "Cpp ( 4 ).vcxproj", "{7430C429-AECD-4478-AAD8-E6044C295CA4}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7430C429-AECD-4478-AAD8-E6044C295CA4}.Debug|x64.ActiveCfg = Debug|x64
-		{7430C429-AECD-4478-AAD8-E6044C295CA4}.Debug|x64.Build.0 = Debug|x64
-		{7430C429-AECD-4478-AAD8-E6044C295CA4}.Debug|x86.ActiveCfg = Debug|Win32
-		{7430C429-AECD-4478-AAD8-E6044C295CA4}.Debug|x86.Build.0 = Debug|Win32
-		{7430C429-AECD-4478-AAD8-E6044C295CA4}.Release|x64.ActiveCfg = Release|x64
-		{7430C429-AECD-4478-AAD8-E6044C295CA4}.Release|x64.Build.0 = Release|x64
-		{7430C429-AECD-4478-AAD8-E6044C295CA4}.Release|x86.ActiveCfg = Release|Win32
-		{7430C429-AECD-4478-AAD8-E6044C295CA4}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {5B65B6F4-58D8-4113-9986-337E03B8CEE2}
-	EndGlobalSection
-EndGlobal
+/*#include<iostream>
+using namespace std;
+class num {
+    int a;
+public:
+    void get() { cout << "Enter: "; cin >> a; }
+    void swap(num& x) { int t = a; a = x.a; x.a = t; }
+    void show() { cout << a << "\n"; }
+};
+int main() {
+    num n1, n2;
+    n1.get();
+    n2.get();
+    n1.swap(n2);
+    cout << "After swap:\n";
+    n1.show();
+    n2.show();
+    system("pause"); // waits so output stays
+    return 0;
+}*/
+/*#include<iostream>
+using namespace std;
+class num {
+    int a;
+public:
+    void get() { cout << "Enter number: "; cin >> a; }
+    void show() { cout << a << "\n"; }
+    friend void swap(num&, num&);
+};
+void swap(num& x, num& y) { int t = x.a; x.a = y.a; y.a = t; }
+int main() {
+    num n1, n2;
+    n1.get();
+    n2.get();
+    swap(n1, n2);
+    cout << "After swap:\n";
+    n1.show();
+    n2.show();
+    system("pause");
+    return 0;
+}*/
+/*#include<iostream>
+using namespace std;
+class B;
+class A {
+    int a;
+public:
+    void get() { cout << "Enter number A: "; cin >> a; }
+    void show() { cout << a << "\n"; }
+    friend void swap(A&, B&);
+};
+class B {
+    int b;
+public:
+    void get() { cout << "Enter number B: "; cin >> b; }
+    void show() { cout << b << "\n"; }
+    friend void swap(A&, B&);
+};
+void swap(A& x, B& y) {
+    int t = x.a; x.a = y.b; y.b = t;
+}
+int main() {
+    A o1; B o2;
+    o1.get();
+    o2.get();
+    swap(o1, o2);
+    cout << "After swap:\n";
+    o1.show();
+    o2.show();
+    system("pause");
+    return 0;
+}*/
+/*#include<iostream>
+using namespace std;
+class R2;
+class R1 {
+    int m;
+public:
+    void get() { cout << "Enter marks for Result1: "; cin >> m; }
+    friend void avg(R1, R2);
+};
+class R2 {
+    int m;
+public:
+    void get() { cout << "Enter marks for Result2: "; cin >> m; }
+    friend void avg(R1, R2);
+};
+void avg(R1 a, R2 b) {
+    cout << "Average: " << (a.m + b.m) / 2.0 << "\n";
+}
+int main() {
+    R1 x; R2 y;
+    x.get();
+    y.get();
+    avg(x, y);
+    system("pause");
+    return 0;
+}*/
+#include<iostream>
+using namespace std;
+class B;
+class A {
+    int a;
+public:
+    void get() {
+        cout << "Enter number A: "; cin >> a; 
+    }
+    friend void great(A, B);
+};
+class B {
+    int b;
+public:
+    void get() {
+        cout << "Enter number B: "; cin >> b; 
+    }
+    friend void great(A, B);
+};
+void great(A x, B y) {
+    cout << "Greatest: " << (x.a > y.b ? x.a : y.b) << "\n";
+}
+int main() {
+    A p; B q;
+    p.get();
+    q.get();
+    great(p, q);
+    system("pause");
+    return 0;
+}
+
