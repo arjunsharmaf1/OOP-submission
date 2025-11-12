@@ -1,31 +1,309 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C++ ( 5 )", "C++ ( 5 ).vcxproj", "{BAB0A22D-8DBC-49BB-A95D-58AE9780EEE1}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BAB0A22D-8DBC-49BB-A95D-58AE9780EEE1}.Debug|x64.ActiveCfg = Debug|x64
-		{BAB0A22D-8DBC-49BB-A95D-58AE9780EEE1}.Debug|x64.Build.0 = Debug|x64
-		{BAB0A22D-8DBC-49BB-A95D-58AE9780EEE1}.Debug|x86.ActiveCfg = Debug|Win32
-		{BAB0A22D-8DBC-49BB-A95D-58AE9780EEE1}.Debug|x86.Build.0 = Debug|Win32
-		{BAB0A22D-8DBC-49BB-A95D-58AE9780EEE1}.Release|x64.ActiveCfg = Release|x64
-		{BAB0A22D-8DBC-49BB-A95D-58AE9780EEE1}.Release|x64.Build.0 = Release|x64
-		{BAB0A22D-8DBC-49BB-A95D-58AE9780EEE1}.Release|x86.ActiveCfg = Release|Win32
-		{BAB0A22D-8DBC-49BB-A95D-58AE9780EEE1}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D7D7F527-2495-4AE2-BDF3-DC4D55921AC1}
-	EndGlobalSection
-EndGlobal
+/*#include <iostream>
+using namespace std;
+class sum {
+	int n, s=0;
+	public:
+		sum(){
+			cout << "Enter numbers upto add :";
+			cin >> n;
+			for (int i = 0; i <= n; i++)
+			{
+				s += i;
+			}
+		}
+		void disp() {
+			cout << "The numbers upto which we are adding :" << n;
+			cout << "\nSum of numbers:" << s;
+		}
+};
+int main()
+{
+	sum a1;
+	a1.disp();
+	return 0;
+}*/
+/*
+#include <iostream>
+using namespace std;
+class sum {
+	int num, add;
+public:
+	sum(int n) {
+			num = n;
+			add = 0;
+			for (int i = 0; i <= num; i++)
+			{
+				add += i;
+			}
+	}
+	void disp() {
+		cout << "\nThe sum of "<<num<<" number is :"<< add;
+	}
+};
+int main()
+{
+	int num;
+	cout << "Enter number of elemnets upto add :";
+	cin >> num;
+	sum s1(num);
+	s1.disp();
+	return 0;
+}*/
+/*
+#include <iostream>
+using namespace std;
+class sum {
+	int n, s;
+public:
+	sum() {
+		n = 4;
+		s = 0;
+	}
+	sum(const sum& obj) {
+		n = obj.n;
+		s = obj.s;
+	}
+	void calc()
+	{
+		s = 0;
+		for (int i = 1; i <= n; i++)
+		{
+			s += i;
+		}
+	}
+	void disp() {
+		cout << "Number :" << n << endl;
+		cout << "Sum :" << s << endl;
+	}
+};
+	int main() {
+		sum s1;
+		s1.calc();
+		s1.disp();
+		sum s2(s1);
+		s2.disp();
+		return 0;
+	}*/
+/*
+#include <iostream>
+using namespace std;
+class student {
+	string name;
+	float percentage;
+	public:
+		student() {
+			cout << "Name :";
+			cin >> name;
+			cout << "Percentage :";
+			cin >> percentage;
+		}
+		void disp(){
+			cout << "Name :"<< name;
+			cout << "\nPercentage :"<< percentage;
+		}
+};
+int main()
+{
+	student s1;
+	s1.disp();
+	return 0;
+}*/
+/*
+#include <iostream>
+#include <string>
+using namespace std;
+class student {
+	string name;
+	float percentage;
+public :
+	student(string n, float p)
+	{
+		name = n;
+		percentage = p;
+		percentage = 80;
+		name = "Arjun";
+	}
+	void disp()
+	{
+		cout << "Name :" << name;
+		cout << "\nPercentage :" << percentage;
+	}
+};
+int main() {
+
+	student s1("Arjun", 80);
+	s1.disp();
+	return 0;
+}*/
+/*
+#include <iostream>
+#include <string>
+using namespace std;
+class stud
+{
+	string name;
+	float percentage;
+public:
+	stud() {
+		name = "Arjun";
+		percentage = 80;
+	}
+	stud(stud& a) {
+		name = a.name;
+		percentage = a.percentage;
+	}
+	void disp() {
+		cout << "Name :" << name << endl;
+		cout << "Percentage :" << percentage << endl;
+	}
+};
+int main() {
+	stud s1;
+	s1.disp();
+	stud s2(s1);
+	s2.disp();
+	return 0;
+}*/
+/*
+#include <iostream>
+#include <string>
+using namespace std;
+
+class College {
+	int roll_no;
+	string name;
+	string course;
+
+public:
+	College() {
+		roll_no = 26;
+		name = "Arjun";
+		course = "Computer Engineering";
+	}
+	void display() {
+		cout << "Roll No: " << roll_no << "\nName: " << name << "\nCourse: " << course << endl;
+	}
+};
+int main() {
+	College c1; 
+	c1.display();
+	return 0;
+}*/
+/*
+#include <iostream>
+#include <string>
+using namespace std;
+class College {
+	int roll_no;
+	string name;
+	string course;
+public:
+	College(int r, string n, string c) {
+		roll_no = r;
+		name = n;
+		course = c;
+	}
+	void display() {
+		cout << "Roll No: " << roll_no << "\nName: " << name
+			<< "\nCourse: " << course << endl;
+	}
+};
+int main() {
+	College c2(101, "Arjun", "Mechanical Engineering");
+	c2.display();
+	return 0;
+}
+*/
+/*
+#include <iostream>
+#include <string>
+using namespace std;
+
+class College {
+	int roll_no;
+	string name;
+	string course;
+
+public:
+	College(int r, string n, string c) {
+		roll_no = r;
+		name = n;
+		course = c;
+	}
+	College(const College& obj) {
+		roll_no = obj.roll_no;
+		name = obj.name;
+		course = obj.course;
+	}
+	void display() {
+		cout << "Roll No: " << roll_no << "\nName: " << name
+			<< "\nCourse: " << course << endl;
+	}
+};
+int main() {
+	College c2(102, "Arjun", "Civil Engineering");
+	College c3(c2);
+	cout << "Original Object:" << endl;
+	c2.display();
+	cout << "Copied Object:" << endl;
+	c3.display();
+	return 0;
+}*/
+/*
+#include <iostream>
+#include <string>
+using namespace std;
+
+class College {
+	int roll_no;
+	string name;
+	string course;
+
+public:
+	// 1. Default constructor
+	College() {
+		roll_no = 0;
+		name = "Unknown";
+		course = "Computer Engineering";   // default course
+	}
+
+	// 2. Parameterized constructor
+	College(int r, string n, string c) {
+		roll_no = r;
+		name = n;
+		course = c;
+	}
+
+	// 3. Copy constructor
+	College(const College& obj) {
+		roll_no = obj.roll_no;
+		name = obj.name;
+		course = obj.course;
+	}
+
+	// Function to display data
+	void display() {
+		cout << "Roll No: " << roll_no
+			<< ", Name: " << name
+			<< ", Course: " << course << endl;
+	}
+};
+
+int main() {
+	// Calls default constructor
+	College c1;
+	cout << "Using Default Constructor:" << endl;
+	c1.display();
+
+	// Calls parameterized constructor
+	College c2(101, "Arjun", "Mechanical Engineering");
+	cout << "\nUsing Parameterized Constructor:" << endl;
+	c2.display();
+
+	// Calls copy constructor
+	College c3(c2);
+	cout << "\nUsing Copy Constructor:" << endl;
+	c3.display();
+
+	return 0;
+}*/
