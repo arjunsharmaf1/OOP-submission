@@ -1,31 +1,230 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cpp exp(6)", "Cpp exp(6).vcxproj", "{1F4E5607-F38A-4D85-8FFA-102CBC93A68A}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1F4E5607-F38A-4D85-8FFA-102CBC93A68A}.Debug|x64.ActiveCfg = Debug|x64
-		{1F4E5607-F38A-4D85-8FFA-102CBC93A68A}.Debug|x64.Build.0 = Debug|x64
-		{1F4E5607-F38A-4D85-8FFA-102CBC93A68A}.Debug|x86.ActiveCfg = Debug|Win32
-		{1F4E5607-F38A-4D85-8FFA-102CBC93A68A}.Debug|x86.Build.0 = Debug|Win32
-		{1F4E5607-F38A-4D85-8FFA-102CBC93A68A}.Release|x64.ActiveCfg = Release|x64
-		{1F4E5607-F38A-4D85-8FFA-102CBC93A68A}.Release|x64.Build.0 = Release|x64
-		{1F4E5607-F38A-4D85-8FFA-102CBC93A68A}.Release|x86.ActiveCfg = Release|Win32
-		{1F4E5607-F38A-4D85-8FFA-102CBC93A68A}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {169FB4C7-C8A9-4D90-AC52-1289FA810FC7}
-	EndGlobalSection
-EndGlobal
+/*#include <iostream>
+#include <string>
+using namespace std;
+class dept {
+protected :
+	string d_name;
+};
+class stud:protected dept {
+protected:
+	int roll;
+	string s_name;
+};
+class marks :protected dept, protected stud {
+private :
+	int m1, m2;
+	float p;
+public :
+	void acc() {
+			cout << "Enter department name: ";
+			cin >> dept::d_name;
+			cout << "Enter student name: ";
+			cin >> s_name;
+			cout << "Enter roll number: ";
+			cin >> roll;
+			cout << "Enter marks1: ";
+			cin >> m1;
+			cout << "Enter marks2: ";
+			cin >> m2;
+	}
+	void calc() {
+		p = ((m1 + m2) / 200.0) * 100;
+	}
+	void disp() {
+		cout << "\n--- Student Details ---\n";
+		cout << "Department Name: " << dept::d_name << "\n";
+		cout << "Student Name: " << s_name << "\n";
+		cout << "Roll Number: " << roll << "\n";
+		cout << "Marks1: " << m1 << "\n";
+		cout << "Marks2: " << m2 << "\n";
+		cout << "Percentage: " << p << "%\n";
+	}
+};
+int main()
+{
+	marks m;
+	m.acc();
+	m.calc();
+	m.disp();
+	return 0;
+}*/
+/*
+#include <iostream>
+using namespace std;
+class Academic {
+protected:
+	int marks;
+public:
+	Academic(int m = 0) : marks(m) {}
+	void displayAcademic() {
+		cout << "Academic Marks: " << marks << endl;
+	}
+};
+class Sports {
+protected:
+	int score;
+public:
+	Sports(int s = 0) : score(s) {}
+	void displaySports() {
+		cout << "Sports Score: " << score << endl;
+	}
+};
+class Result : public Academic, public Sports {
+public:
+	Result(int m, int s) : Academic(m), Sports(s) {}
+
+	int calculateTotal() {
+		return marks + score;
+	}
+
+	void displayResult() {
+		displayAcademic();
+		displaySports();
+		cout << "Total Score: " << calculateTotal() << endl;
+	}
+};
+int main() {
+	int marks, score;
+
+	cout << "Enter academic marks: ";
+	cin >> marks;
+	cout << "Enter sports score: ";
+	cin >> score;
+
+	Result student(marks, score);
+	student.displayResult();
+
+	return 0;
+}
+*/
+/*
+#include<iostream>
+using namespace std;
+class vehicle
+{
+protected:
+	string brand = "bmw";
+	string model = "x1";
+};
+class car :protected vehicle
+{
+protected:
+	string type = "SUV";
+};
+class electriccar :protected car
+{
+	int batterycapacity = 80;
+public:
+	void display()
+	{
+		cout << "\nbrand is :" << brand;
+		cout << "\nmodel is :" << model;
+		cout << "\ntype is :" << type;
+		cout << "\nbattery capacity is :" << batterycapacity;
+	}
+};
+int main()
+{
+	electriccar e1;
+	e1.display();
+	return 0;
+}*/
+/*
+#include<iostream>
+using namespace std;
+class employee
+{
+protected:
+	int empID = 5;
+	string name = "Arjun";
+};
+class manager :protected employee
+{
+	string dept = "Poly";
+public:
+	void display()
+	{
+		cout << "\nemp id is :" << empID;
+		cout << "\nname is :" << name;
+		cout << "\n department name is :" << dept;
+	}
+};
+class developer :protected employee
+{
+	string programminglanguage = "cpp";
+public:
+	void display()
+	{
+		cout << "\nemp id is :" << empID;
+		cout << "\nname is :" << name;
+		cout << "\n programming language is :" << programminglanguage;
+	}
+};
+int main()
+{
+	manager m1;
+	developer d1;
+	m1.display();
+	d1.display();
+	return 0;
+}*/
+/*
+#include<iostream>
+using namespace std;
+class academics
+{
+protected:
+	int marks = 80;
+};
+class sports
+{
+protected:
+	int sportsscore = 50;
+};
+class result :protected academics, protected sports
+{
+	int totalscore = marks + sportsscore;
+public:
+	void calculate()
+	{
+		cout << "Total score is : " << totalscore;
+	}
+};
+int main()
+{
+	result r1;
+	r1.calculate();
+}*/
+/*
+#include<iostream>
+using namespace std;
+class stud {
+protected:
+	string name;
+};
+class test : virtual protected stud {
+protected:
+	int per;
+};
+class sports : virtual protected stud {
+protected:
+	int grade;
+};
+class result :virtual protected test, virtual protected sports {
+	int res;
+public:
+	void accept() {
+		cin >> name >> per >> grade;
+	}
+	void disp() {
+		res = (per + grade) / 2;
+		cout << res;
+	}
+};
+
+int main() {
+	result r;
+	r.accept();
+	r.disp();
+	return 0;
+}*/
