@@ -1,0 +1,74 @@
+// Experiment - 11
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<string> v{ "a" };
+    vector<string>::iterator p;
+    int i = 0;
+
+    p = v.begin();
+    i = 0;
+
+    while (p != v.end()) {
+        p = v.insert(p, "x");
+        p++;
+    }
+
+    cout << "Original vector:\n";
+
+    p = v.begin();
+    while (p != v.end()) {
+        cout << *p << " ";
+        p++;
+    }
+
+    return 0;
+}
+// 2nd program 
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v;
+    int size, i;
+
+    cout << "Enter size: ";
+    cin >> size;
+
+    // Taking input
+    cout << "Enter vector elements:\n";
+    for (i = 0; i < size; i++) {
+        int x;
+        cin >> x;
+        v.push_back(x);
+    }
+
+    cout << "\nOriginal vector:\n";
+    for (i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+
+    cout << "\n\nAppending vector:\n";
+    for (i = 0; i < 10; i++) {
+        v.push_back(i + 10 * i);
+    }
+
+    cout << "\nSize now = " << v.size();
+    cout << "\nVector is now:\n";
+    for (i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+
+    cout << "\n\nModified vector is:\n";
+    for (i = 0; i < v.size(); i++) {
+        v[i] = v[i] + 5;
+        cout << v[i] << " ";
+    }
+
+    return 0;
+}
