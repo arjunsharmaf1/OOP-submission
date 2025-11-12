@@ -1,31 +1,114 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36310.24 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Exp 8 Cpp", "Exp 8 Cpp.vcxproj", "{576F7FF0-6590-46BB-80C2-267C43658CE7}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{576F7FF0-6590-46BB-80C2-267C43658CE7}.Debug|x64.ActiveCfg = Debug|x64
-		{576F7FF0-6590-46BB-80C2-267C43658CE7}.Debug|x64.Build.0 = Debug|x64
-		{576F7FF0-6590-46BB-80C2-267C43658CE7}.Debug|x86.ActiveCfg = Debug|Win32
-		{576F7FF0-6590-46BB-80C2-267C43658CE7}.Debug|x86.Build.0 = Debug|Win32
-		{576F7FF0-6590-46BB-80C2-267C43658CE7}.Release|x64.ActiveCfg = Release|x64
-		{576F7FF0-6590-46BB-80C2-267C43658CE7}.Release|x64.Build.0 = Release|x64
-		{576F7FF0-6590-46BB-80C2-267C43658CE7}.Release|x86.ActiveCfg = Release|Win32
-		{576F7FF0-6590-46BB-80C2-267C43658CE7}.Release|x86.Build.0 = Release|Win32
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {82F960D1-0AF3-47A9-8A66-047BAE011D2D}
-	EndGlobalSection
-EndGlobal
+/*
+#include <iostream>
+#include <string> // Using the standard string for simplicity
+#include <utility> // For std::move
+
+class MyString {
+private:
+    std::string str;
+
+public:
+    // Constructor to initialize the string
+    MyString(std::string s = "") : str(std::move(s)) {}
+
+    // Overloading the + operator
+    MyString operator+(const MyString& other) {
+        MyString newString;
+        newString.str = this->str + other.str;
+        return newString;
+    }
+
+    // Function to display the string
+    void display() {
+        std::cout << str << std::endl;
+    }
+};
+
+int main() {
+    // Create two string objects
+    MyString s1("xyz");
+    MyString s2("pqr");
+
+    // Concatenate them using the overloaded '+' operator
+    MyString s3 = s1 + s2;
+
+    // Display the result
+    std::cout << "String 1: ";
+    s1.display();
+    std::cout << "String 2: ";
+    s2.display();
+    std::cout << "Concatenated String: ";
+    s3.display();
+
+    return 0;
+}
+*/
+#include <iostream>
+#include <string>
+
+// Base Class
+class ILogin {
+protected:
+    std::string name;
+    std::string password;
+
+public:
+    // Virtual function to be overridden by derived classes
+    virtual void accept() {
+        std::cout << "--- Generic Login ---" << std::endl;
+        std::cout << "Enter Name: ";
+        std::cin >> name;
+        std::cout << "Enter Password: ";
+        std::cin >> password;
+    }
+
+    // A simple function to display data
+    void display() {
+        std::cout << "Name/ID: " << name << std::endl;
+        std::cout << "Password: " << password << std::endl;
+    }
+
+    // Virtual destructor (good practice)
+    virtual ~ILogin() {}
+};
+
+// Derived Class 1
+class EmailLogin : public ILogin {
+public:
+    void accept() override {
+        std::cout << "--- Email Login Details ---" << std::endl;
+        std::cout << "Enter Email ID: ";
+        std::cin >> name;
+        std::cout << "Enter Email Password: ";
+        std::cin >> password;
+    }
+};
+
+// Derived Class 2
+class MembershipLogin : public ILogin {
+public:
+    void accept() override {
+        std::cout << "\n--- Membership Login Details ---" << std::endl;
+        std::cout << "Enter Membership ID: ";
+        std::cin >> name;
+        std::cout << "Enter Membership Password: ";
+        std::cin >> password;
+    }
+};
+
+
+int main() {
+    // Create an object for Email Login
+    EmailLogin email_user;
+    email_user.accept();
+    std::cout << "\nDisplaying Email Details:" << std::endl;
+    email_user.display();
+
+    // Create an object for Membership Login
+    MembershipLogin membership_user;
+    membership_user.accept();
+    std::cout << "\nDisplaying Membership Details:" << std::endl;
+    membership_user.display();
+
+    return 0;
+}
