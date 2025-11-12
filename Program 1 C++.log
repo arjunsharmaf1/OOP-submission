@@ -1,2 +1,182 @@
-﻿  Program 1 C++.cpp
-  Program 1 C++.vcxproj -> C:\Users\Arjun\C++\Program 1 C++\x64\Debug\Program 1 C++.exe
+/*
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a, b, sum;
+    cout << "enter values :\n";
+    cin >> a >> b;
+    sum = a + b;
+    cout << "Sum of 2 numbers is :" << sum;
+    return 0;
+}
+*/
+/*
+#include <iostream>
+using namespace std;
+void main()
+{
+    int num1, num2;
+    double result;
+    char op;
+    cout << "Enter first number :";
+    cin >> num1;
+    cout << "Enter seconf number :";
+    cin >> num2;
+    cout << "Enter an operator :";
+    cin >> op;
+    switch (op)
+    {
+    case'+':
+            result = num1 + num2;
+            cout << "Result" << result<<endl;
+    case'-':
+        result = num1 - num2;
+        cout << "Result" << result << endl;
+    case'*':
+        result = num1 * num2;
+        cout << "Result" << result << endl;
+    case'/':
+        if (num2 != 0)
+        {
+            result = num1 / num2;
+            cout << "Result" << result << endl;
+        }
+        else
+        {
+            cout << "Input is invalid" ;
+        }
+    }
+
+}
+*/
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int number;
+
+    cout << "enter number: ";
+    cin >> number;
+
+    if (number % 2 == 0)
+    {
+        cout << number << " is even." << endl;
+    }
+    else
+    {
+        cout << number << " is odd." << endl;
+    }
+
+    return 0;
+}
+*/
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    for (int i = 1; i <= 10; i++)
+    {
+        cout << i << " ";
+    }
+
+    cout << endl;
+    return 0;
+}
+*/
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i = 10;
+
+    while (i >= 1)
+    {
+        cout << i << " ";
+        i--;
+    }
+
+    cout << endl;
+
+    return 0;
+}
+*/
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int rows = 3;
+    int space;
+
+    for (int i = 1; i <= rows; i++)
+    {
+        space = rows - i;
+
+
+        for (int s = 1; s <= space; s++)
+        {
+            cout << "  ";
+        }
+
+
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*   ";
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+}
+
+*/
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int rows = 5;
+
+    for (int i = 1; i <= rows; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << i << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+*/
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int rows = 3;
+
+    for (int i = 1; i <= rows; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout << j << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+*/
+
+
